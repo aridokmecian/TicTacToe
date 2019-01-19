@@ -93,6 +93,7 @@ function test() {
 
 
 function clear() {
+  // Clears the board
   turn = 1;
   count = 0;
   for(var i = 1; i < 10; i++){
