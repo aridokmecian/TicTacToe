@@ -11,15 +11,17 @@ window.onload = function() {
   $("8").observe("click", check);
   $("9").observe("click", check);
   $("reset").observe("click", clear);
+  
 }
 
 function check() {
-  if (turn == 1 && this.src =="file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  console.log(getFileName(this.src));
+  if (turn == 1 && getFileName(this.src) == "blankScreen.png") {
     this.src = "x.png";
     turn--;
     count++;
   }
-  else if (turn == 0 && this.src =="file:///C:/Users/Ari/Documents/TicTacToe/blank.png"){
+  else if (turn == 0 && getFileName(this.src) == "blankScreen.png"){
     this.src = "o.png";
     turn++;
     count++;
@@ -31,42 +33,52 @@ function check() {
     console.log(count);
 }
 
+function getFileName(pathfilename){
+
+  var filenameextension = pathfilename.replace(/^.*[\\\/]/, '');
+  var filename = filenameextension.substring(0, filenameextension.lastIndexOf('.'));
+  var ext = filenameextension.split('.').pop();
+
+  return filename + "." + ext;
+
+}
+
 function test() {
-  if ($("1").src == $("2").src && $("1").src == $("3").src && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  if (getFileName($("1").src) == getFileName($("2").src) && getFileName($("1").src) == getFileName($("3").src) && getFileName($("1").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
-  else if ($("1").src == $("5").src && $("1").src == $("9").src  && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
-    alert("Game! press OK to Reset");
-    clear();
-  }
-
-  else if ($("1").src == $("4").src && $("1").src == $("7").src  && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("1").src) == getFileName($("5").src) && getFileName($("1").src) == getFileName($("9").src)  && getFileName($("1").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("2").src == $("5").src && $("2").src == $("8").src  && $("2").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("1").src) == getFileName($("4").src) && getFileName($("1").src) == getFileName($("7").src)  && getFileName($("1").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("3").src == $("5").src && $("3").src == $("7").src  && $("3").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("2").src) == getFileName($("5").src) && getFileName($("2").src) == getFileName($("8").src)  && getFileName($("2").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("3").src == $("6").src && $("3").src == $("9").src  && $("3").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("3").src) == getFileName($("5").src) && getFileName($("3").src) == getFileName($("7").src)  && getFileName($("3").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("7").src == $("8").src && $("7").src == $("9").src  && $("7").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("3").src) == getFileName($("6").src) && getFileName($("3").src) == getFileName($("9").src)  && getFileName($("3").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("4").src == $("5").src && $("4").src == $("6").src  && $("4").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if (getFileName($("7").src) == getFileName($("8").src) && getFileName($("7").src) == getFileName($("9").src)  && getFileName($("7").src) != "blankScreen.png") {
+    alert("Game! press OK to Reset");
+    clear();
+  }
+
+  else if (getFileName($("4").src) == getFileName($("5").src) && getFileName($("4").src) == getFileName($("6").src)  && getFileName($("4").src) != "blankScreen.png") {
     alert("Game! press OK to Reset");
     clear();
   }
@@ -83,13 +95,8 @@ function test() {
 function clear() {
   turn = 1;
   count = 0;
-  $("1").src = "blank.png";
-  $("2").src = "blank.png";
-  $("3").src = "blank.png";
-  $("4").src = "blank.png";
-  $("5").src = "blank.png";
-  $("6").src = "blank.png";
-  $("7").src = "blank.png";
-  $("8").src = "blank.png";
-  $("9").src = "blank.png";
+  for(var i = 1; i < 10; i++){
+    console.log("" + i);
+    ($(i.toString()).src) = "blankScreen.png";
+  }
 }
