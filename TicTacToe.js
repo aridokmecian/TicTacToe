@@ -14,12 +14,12 @@ window.onload = function() {
 }
 
 function check() {
-  if (turn == 1 && this.src =="file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  if (turn == 1 && this.src =="file:blank.png") {
     this.src = "x.png";
     turn--;
     count++;
   }
-  else if (turn == 0 && this.src =="file:///C:/Users/Ari/Documents/TicTacToe/blank.png"){
+  else if (turn == 0 && this.src =="file:blank.png"){
     this.src = "o.png";
     turn++;
     count++;
@@ -32,41 +32,41 @@ function check() {
 }
 
 function test() {
-  if ($("1").src == $("2").src && $("1").src == $("3").src && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  if ($("1").src == $("2").src && $("1").src == $("3").src && $("1").src != "blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
-  else if ($("1").src == $("5").src && $("1").src == $("9").src  && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
-    alert("Game! press OK to Reset");
-    clear();
-  }
-
-  else if ($("1").src == $("4").src && $("1").src == $("7").src  && $("1").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("1").src == $("5").src && $("1").src == $("9").src  && $("1").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("2").src == $("5").src && $("2").src == $("8").src  && $("2").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("1").src == $("4").src && $("1").src == $("7").src  && $("1").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("3").src == $("5").src && $("3").src == $("7").src  && $("3").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("2").src == $("5").src && $("2").src == $("8").src  && $("2").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("3").src == $("6").src && $("3").src == $("9").src  && $("3").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("3").src == $("5").src && $("3").src == $("7").src  && $("3").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("7").src == $("8").src && $("7").src == $("9").src  && $("7").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("3").src == $("6").src && $("3").src == $("9").src  && $("3").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
 
-  else if ($("4").src == $("5").src && $("4").src == $("6").src  && $("4").src != "file:///C:/Users/Ari/Documents/TicTacToe/blank.png") {
+  else if ($("7").src == $("8").src && $("7").src == $("9").src  && $("7").src != "file:blank.png") {
+    alert("Game! press OK to Reset");
+    clear();
+  }
+
+  else if ($("4").src == $("5").src && $("4").src == $("6").src  && $("4").src != "file:blank.png") {
     alert("Game! press OK to Reset");
     clear();
   }
